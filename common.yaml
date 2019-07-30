@@ -1,0 +1,66 @@
+version: "2.4"
+services:
+    odoo:
+        image: $ODOO_IMAGE:$ODOO_MINOR
+        build:
+            context: ./odoo
+            args:
+                ODOO_VERSION: $ODOO_MINOR
+                UID: "${UID:-1000}"
+                GID: "${GID:-1000}"
+        environment:
+            PGDATABASE: &dbname prod
+            PGUSER: &dbuser "$DB_USER"
+            DB_FILTER: "$DB_FILTER"
+            PROXY_MODE: "$ODOO_PROXY_MODE"
+        hostname: "$SMTP_REAL_NON_CANONICAL_DEFAULT"
+        tty: true
+        volumes:
+            - filestore:/var/lib/odoo:z
+        labels:
+            traefik.docker.network: "inverseproxy_shared"
+            traefik.enable: "true"
+            traefik.frontend.passHostHeader: "true"
+            traefik.longpolling.port: "8072"
+            traefik.port: "8069"
+
+    db:
+        image: tecnativa/postgres-autoconf:${DB_VERSION}-alpine
+        shm_size: 512mb
+        environment:
+            POSTGRES_DB: *dbname
+            POSTGRES_USER: *dbuser
+            CONF_EXTRA: |
+                work_mem = 32MB
+        volumes:
+            - db:/var/lib/postgresql/data:z
+
+    smtpfake:
+        image: mailhog/mailhog
+
+    smtpreal:
+        image: tecnativa/postfix-relay
+        volumes:
+            - smtp:/var/spool/postfix
+        environment:
+            MAILNAME: "$SMTP_REAL_MAILNAME"
+            MAIL_RELAY_HOST: "$SMTP_REAL_RELAY_HOST"
+            MAIL_RELAY_PORT: "$SMTP_REAL_RELAY_PORT"
+            MAIL_RELAY_USER: "$SMTP_REAL_RELAY_USER"
+            MAIL_CANONICAL_DOMAINS: "$SMTP_REAL_CANONICAL_DOMAINS"
+            MAIL_NON_CANONICAL_DEFAULT: "$SMTP_REAL_NON_CANONICAL_DEFAULT"
+
+    backup:
+        image: tecnativa/duplicity:postgres-s3
+        hostname: backup
+        domainname: "$DOMAIN_PROD"
+        environment:
+            DST: "s3://s3.amazonaws.com/$BACKUP_S3_BUCKET"
+            EMAIL_FROM: "$BACKUP_EMAIL_FROM"
+            EMAIL_TO: "$BACKUP_EMAIL_TO"
+            PGDATABASE: *dbname
+            PGUSER: *dbuser
+            SMTP_HOST: smtplocal
+        volumes:
+            - backup_cache:/root:z
+            - filestore:/mnt/backup/src/odoo:z
