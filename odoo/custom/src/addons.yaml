@@ -1,0 +1,64 @@
+account-financial-reporting:
+    - account_financial_report
+account-financial-tools:
+    - account_asset_management
+    - account_document_reversal
+    - account_fiscal_year
+    - account_payment_netting
+    - account_type_menu
+    - account_payment_intransit
+    - account_payment_intransit_deduction
+    - account_payment_intransit_reversal
+account-invoicing:
+    - account_invoice_refund_link
+    - account_billing
+    - account_invoice_reimbursable
+    - account_menu_invoice_refund
+    - account_debitnote
+account-payment:
+    - account_payment_multi_deduction
+credit-control:
+    - account_financial_risk
+    - sale_financial_risk
+    - stock_financial_risk
+hr:
+    - hr_expense_advance_clearing
+    - hr_expense_invoice
+    - hr_expense_payment_difference
+l10n-thailand:
+    - account_create_tax_cash_basis_entry_hook
+    - l10n_th_account_report
+    - l10n_th_partner
+    - l10n_th_vendor_tax_invoice
+    - l10n_th_withholding_tax_cert
+    - l10n_th_withholding_tax_cert_form
+manufacture:
+    - stock_picking_product_kit_helper
+partner-contact:
+    - partner_fax
+product-attribute:
+    - product_brand
+    - product_secondary_unit
+    - product_sequence
+purchase-workflow:
+    - purchase_deposit
+    - purchase_discount
+    - purchase_order_secondary_unit
+reporting-engine:
+    - report_xlsx
+    - report_qweb_element_page_visibility
+sale-workflow:
+    - sale_invoice_plan
+    - sale_order_line_sequence
+server-tools:
+    - auto_backup
+    - excel_import_export
+    - dbfilter_from_header
+    - module_analysis
+server-ux:
+    - date_range
+    - mass_editing
+stock-logistics-warehouse:
+    - stock_secondary_unit
+web:
+    - web_m2x_options
