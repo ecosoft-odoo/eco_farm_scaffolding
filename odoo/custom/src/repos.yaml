@@ -29,11 +29,11 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/859/head
-        - origin refs/pull/823/head
-        - origin refs/pull/821/head
-        - origin refs/pull/822/head
-        - origin refs/pull/825/head
+        - origin refs/pull/859/head # account_asset_management
+        - origin refs/pull/823/head # account_payment_netting
+        - origin refs/pull/821/head # account_payment_intransit
+        - origin refs/pull/822/head # account_payment_intransit_deduction
+        - origin refs/pull/825/head # account_payment_intransit_reversal
 
 ./account-invoicing:
     defaults:
@@ -44,10 +44,10 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/523/head
-        - origin refs/pull/538/head
-        - origin refs/pull/555/head
-        - origin refs/pull/559/head
+        - origin refs/pull/523/head # account_billing
+        - origin refs/pull/538/head # account_invoice_reimbursable
+        - origin refs/pull/555/head # account_menu_invoice_refund
+        - origin refs/pull/559/head # account_debitnote
 
 ./account-payment:
     defaults:
@@ -58,7 +58,7 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/248/head
+        - origin refs/pull/248/head # account_payment_multi_deduction
 
 ./credit-control:
     defaults:
@@ -79,8 +79,8 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/622/head
-        - origin refs/pull/635/head
+        - origin refs/pull/622/head # hr_expense_invoice
+        - origin refs/pull/635/head # hr_expense_payment_difference
 
 ./l10n-thailand:
     defaults:
@@ -101,7 +101,7 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/376/head
+        - origin refs/pull/376/head # stock_picking_product_kit_helper
 
 ./partner-contact:
     defaults:
@@ -122,7 +122,7 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/416/head
+        - origin refs/pull/416/head # product_sequence
 
 ./purchase-workflow:
     defaults:
@@ -133,9 +133,9 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/694/head
-        - origin refs/pull/668/head
-        - origin refs/pull/641/head
+        - origin refs/pull/694/head # purchase_deposit
+        - origin refs/pull/668/head # purchase_discount
+        - origin refs/pull/641/head # purchase_order_secondary_unit
 
 ./reporting-engine:
     defaults:
@@ -146,7 +146,7 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/289/head
+        - origin refs/pull/289/head # report_qweb_element_page_visibility
 
 ./sale-workflow:
     defaults:
@@ -157,7 +157,7 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/807/head
+        - origin refs/pull/807/head # sale_invoice_plan
 
 ./server-tools:
     defaults:
@@ -194,6 +194,16 @@
         depth: $DEPTH_DEFAULT
     remotes:
         origin: https://github.com/OCA/web.git
+    target:
+        origin $ODOO_VERSION
+    merges:
+        - origin $ODOO_VERSION
+
+./eco-farm:
+    defaults:
+        depth: $DEPTH_DEFAULT
+    remotes:
+        origin: https://github.com/ecosoft-odoo/eco_farm.git
     target:
         origin $ODOO_VERSION
     merges:
