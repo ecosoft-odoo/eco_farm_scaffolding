@@ -22,7 +22,7 @@
 
 ./account-financial-tools:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/account-financial-tools.git
     target:
@@ -37,7 +37,7 @@
 
 ./account-invoicing:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/account-invoicing.git
     target:
@@ -51,7 +51,7 @@
 
 ./account-payment:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/account-payment.git
     target:
@@ -72,7 +72,7 @@
 
 ./hr:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/hr.git
     target:
@@ -94,7 +94,7 @@
 
 ./manufacture:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/manufacture.git
     target:
@@ -115,7 +115,7 @@
 
 ./product-attribute:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/product-attribute.git
     target:
@@ -126,7 +126,7 @@
 
 ./purchase-workflow:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/purchase-workflow.git
     target:
@@ -139,7 +139,7 @@
 
 ./reporting-engine:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/reporting-engine.git
     target:
@@ -150,7 +150,7 @@
 
 ./sale-workflow:
     defaults:
-        depth: $DEPTH_DEFAULT
+        depth: $DEPTH_MERGE
     remotes:
         origin: https://github.com/OCA/sale-workflow.git
     target:
