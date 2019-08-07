@@ -55,6 +55,7 @@ server-tools:
     - excel_import_export
     - dbfilter_from_header
     - module_analysis
+    - module_auto_update
 server-ux:
     - date_range
     - mass_editing
@@ -62,5 +63,8 @@ stock-logistics-warehouse:
     - stock_secondary_unit
 web:
     - web_m2x_options
+mis-builder:
+    - mis_builder
+    - mis_builder_budget
 eco-farm:
     - eco_farm

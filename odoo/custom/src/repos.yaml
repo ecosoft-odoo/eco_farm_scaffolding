@@ -199,6 +199,16 @@
     merges:
         - origin $ODOO_VERSION
 
+./mis-builder:
+    defaults:
+        depth: $DEPTH_DEFAULT
+    remotes:
+        origin: https://github.com/OCA/mis-builder.git
+    target:
+        origin $ODOO_VERSION
+    merges:
+        - origin $ODOO_VERSION
+
 ./eco-farm:
     defaults:
         depth: $DEPTH_DEFAULT
