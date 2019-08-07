@@ -1,42 +1,56 @@
 version: "2.4"
 services:
     odoo:
+        container_name: odoo
+        restart: unless-stopped
         extends:
             file: common.yaml
             service: odoo
+        build:
+            args:
+                AGGREGATE: "false"
+                PIP_INSTALL_ODOO: "false"
+                CLEAN: "false"
+                COMPILE: "false"
         env_file:
             - .docker/odoo.env
             - .docker/db-access.env
-        container_name: odoo
-        restart: unless-stopped
         environment:
             DOODBA_ENVIRONMENT: "${DOODBA_ENVIRONMENT-prod}"
-            INITIAL_LANG: "$INITIAL_LANG"
             LIST_DB: "true"
+            PTVSD_ENABLE: "${DOODBA_PTVSD_ENABLE:-0}"
+            PGDATABASE: &dbname prod
+            PYTHONOPTIMIZE: ""
+            PYTHONPATH: /opt/odoo/custom/src/odoo
+            SMTP_PORT: "1025"
+            SMTP_SERVER: smtplocal
+            WITHOUT_DEMO: "${DOODBA_WITHOUT_DEMO-all}"
+            INITIAL_LANG: "$INITIAL_LANG"
+        volumes:
+            - ./odoo/custom:/opt/odoo/custom:ro,z
+            - ./odoo/auto/addons:/opt/odoo/auto/addons:rw,z
         depends_on:
             - db
         networks:
             default:
         ports:
             - "8069:8069"
-        labels:
-            traefik.longpolling.frontend.rule:
-                "Host:${DOMAIN_PROD};PathPrefix:/longpolling/"
-            traefik.www.frontend.rule: "Host:${DOMAIN_PROD}"
-            traefik.alt.frontend.rule: "Host:${DOMAIN_PROD_ALT}"
-            traefik.alt.frontend.redirect.regex:
-                "^(.*)://${DOMAIN_PROD_ALT}/(.*)$$"
-            traefik.alt.frontend.redirect.replacement:
-                "$$1://${DOMAIN_PROD}/$$2"
+        command:
+            - odoo
+            - --limit-memory-soft=0
+            - --limit-time-real-cron=0
+            - --limit-time-real=0
+            - --worker=0
+            - --dev=reload,qweb,werkzeug,xml
 
     db:
+        container_name: db
+        restart: unless-stopped
         extends:
             file: common.yaml
             service: db
         env_file:
             - .docker/db-creation.env
-        container_name: db
-        restart: unless-stopped
         networks:
             default:
         ports:

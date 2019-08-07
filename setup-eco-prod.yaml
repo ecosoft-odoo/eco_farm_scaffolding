@@ -1,0 +1,18 @@
+version: "2.4"
+services:
+    odoo:
+        image: $ODOO_IMAGE:$ODOO_MINOR
+        networks:
+            - default
+        volumes:
+            - ./odoo/custom/src:/opt/odoo/custom/src:rw,z
+        environment:
+            DEPTH_DEFAULT: 100
+            UID: "${UID:-1000}"
+            GID: "${GID:-1000}"
+            UMASK: "$UMASK"
+        user: root
+        entrypoint: autoaggregate
+
+networks:
+    default:
