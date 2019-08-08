@@ -1,4 +1,4 @@
-version: "2.4"
+version: "2.2"
 services:
     odoo:
         image: $ODOO_IMAGE:$ODOO_MINOR
