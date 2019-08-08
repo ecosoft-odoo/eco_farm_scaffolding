@@ -11,6 +11,8 @@ services:
             UID: "${UID:-1000}"
             GID: "${GID:-1000}"
             UMASK: "$UMASK"
+            PROJECT_NAME: "$PROJECT_NAME"
+            PROJECT_BRANCH: "$PROJECT_BRANCH"
         user: root
         entrypoint: autoaggregate
 

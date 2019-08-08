@@ -218,3 +218,13 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
+
+./myproject:
+    defaults:
+        depth: $DEPTH_DEFAULT
+    remotes:
+        origin: https://github.com/newtratip/$PROJECT_NAME.git
+    target:
+        origin $PROJECT_BRANCH
+    merges:
+        - origin $PROJECT_BRANCH
