@@ -37,6 +37,8 @@ services:
             - "8069:8069"
         command:
             - odoo
+            - --init=base
+            - --database=prod
             - --limit-memory-soft=0
             - --limit-time-real-cron=0
             - --limit-time-real=0

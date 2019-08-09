@@ -222,7 +222,7 @@
     defaults:
         depth: $DEPTH_DEFAULT
     remotes:
-        origin: https://github.com/newtratip/$PROJECT_NAME.git
+        origin: https://github.com/ecosoft-odoo/$PROJECT_NAME.git
     target:
         origin $PROJECT_BRANCH
     merges:
