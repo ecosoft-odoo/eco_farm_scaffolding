@@ -134,7 +134,6 @@
     merges:
         - origin $ODOO_VERSION
         - origin refs/pull/694/head # purchase_deposit
-        - origin refs/pull/668/head # purchase_discount
         - origin refs/pull/641/head # purchase_order_secondary_unit
 
 ./reporting-engine:
