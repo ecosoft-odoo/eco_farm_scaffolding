@@ -10,7 +10,7 @@ services:
             DEPTH_DEFAULT: 100
             UID: "${UID:-1000}"
             GID: "${GID:-1000}"
-            UMASK: "$UMASK"
+            UMASK: "${UMASK:-0022}"
             PROJECT_NAME: "$PROJECT_NAME"
             PROJECT_BRANCH: "$PROJECT_BRANCH"
         user: root
