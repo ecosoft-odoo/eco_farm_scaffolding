@@ -218,12 +218,12 @@
     merges:
         - origin $ODOO_VERSION
 
-#./myproject:
-#    defaults:
-#        depth: $DEPTH_DEFAULT
-#    remotes:
-#        origin: https://github.com/ecosoft-odoo/$PROJECT_NAME.git
-#    target:
-#        origin $PROJECT_BRANCH
-#    merges:
-#        - origin $PROJECT_BRANCH
+./myproject:
+    defaults:
+        depth: $DEPTH_DEFAULT
+    remotes:
+        origin: https://github.com/ecosoft-odoo/$PROJECT_NAME.git
+    target:
+        origin $PROJECT_BRANCH
+    merges:
+        - origin $PROJECT_BRANCH
