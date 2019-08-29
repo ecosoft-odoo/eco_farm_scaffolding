@@ -45,7 +45,6 @@
     merges:
         - origin $ODOO_VERSION
         - origin refs/pull/523/head # account_billing
-        - origin refs/pull/538/head # account_invoice_reimbursable
         - origin refs/pull/555/head # account_menu_invoice_refund
         - origin refs/pull/559/head # account_debitnote
 
