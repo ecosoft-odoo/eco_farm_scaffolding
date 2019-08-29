@@ -68,5 +68,5 @@ mis-builder:
     - mis_builder_budget
 eco-farm:
     - eco_farm
-#myproject:
-#    - "*"
+myproject:
+    - "*"
