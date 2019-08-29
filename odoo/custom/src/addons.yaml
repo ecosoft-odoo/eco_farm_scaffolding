@@ -43,7 +43,7 @@ product-attribute:
 purchase-workflow:
     - purchase_deposit
     - purchase_discount
-    - purchase_order_secondary_unit
+    #- purchase_order_secondary_unit
 reporting-engine:
     - report_xlsx
     - report_qweb_element_page_visibility
