@@ -1,7 +1,7 @@
 account-financial-reporting:
     - account_financial_report
 account-financial-tools:
-    - account_asset_management
+    #- account_asset_management
     - account_document_reversal
     - account_fiscal_year
     - account_payment_netting
