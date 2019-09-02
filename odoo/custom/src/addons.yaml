@@ -66,6 +66,8 @@ web:
 mis-builder:
     - mis_builder
     - mis_builder_budget
+aswathychandhu:
+    - deadstock_report
 eco-farm:
     - eco_farm
 myproject:
