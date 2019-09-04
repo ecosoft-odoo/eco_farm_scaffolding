@@ -155,7 +155,6 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/807/head # sale_invoice_plan
 
 ./server-tools:
     defaults:
