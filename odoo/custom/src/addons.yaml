@@ -66,6 +66,10 @@ web:
 mis-builder:
     - mis_builder
     - mis_builder_budget
+contract:
+    - contract
+    - agreement
+    - agreement_legal
 aswathychandhu:
     - deadstock_report
 eco-farm:
