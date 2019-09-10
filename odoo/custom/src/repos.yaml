@@ -206,6 +206,16 @@
     merges:
         - origin $ODOO_VERSION
         
+./contract:
+    defaults:
+        depth: $DEPTH_DEFAULT
+    remotes:
+        origin: https://github.com/OCA/contract.git
+    target:
+        origin $ODOO_VERSION
+    merges:
+        - origin $ODOO_VERSION
+        
 ./aswathychandhu:
     defaults:
         depth: $DEPTH_DEFAULT
