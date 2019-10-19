@@ -29,7 +29,7 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/859/head # account_asset_management
+#         - origin refs/pull/859/head # account_asset_management
         - origin refs/pull/823/head # account_payment_netting
         - origin refs/pull/821/head # account_payment_intransit
         - origin refs/pull/822/head # account_payment_intransit_deduction
