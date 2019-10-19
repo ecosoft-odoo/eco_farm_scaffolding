@@ -121,7 +121,6 @@
         origin $ODOO_VERSION
     merges:
         - origin $ODOO_VERSION
-        - origin refs/pull/416/head # product_sequence
 
 ./purchase-workflow:
     defaults:
